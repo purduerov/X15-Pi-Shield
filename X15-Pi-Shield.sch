@@ -2425,6 +2425,19 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <smd name="8" x="2.1844" y="0.9906" dx="1.3716" dy="0.4064" layer="1"/>
 <circle x="-0.762" y="0.889" radius="0.283978125" width="0.127" layer="21"/>
 </package>
+<package name="2917(7343-31-METRIC)" urn="urn:adsk.eagle:footprint:25131319/2" locally_modified="yes">
+<smd name="+" x="-3.22" y="0" dx="2.77" dy="2.55" layer="1"/>
+<smd name="-" x="3.22" y="0" dx="2.77" dy="2.55" layer="1"/>
+<wire x1="-3.65" y1="2.15" x2="3.65" y2="2.15" width="0.127" layer="21"/>
+<wire x1="3.65" y1="-2.15" x2="-3.65" y2="-2.15" width="0.127" layer="21"/>
+<wire x1="-5.11" y1="2.8" x2="5.11" y2="2.8" width="0.127" layer="39"/>
+<wire x1="5.11" y1="2.8" x2="5.11" y2="-2.8" width="0.127" layer="39"/>
+<wire x1="5.11" y1="-2.8" x2="-5.11" y2="-2.8" width="0.127" layer="39"/>
+<wire x1="-5.11" y1="-2.8" x2="-5.11" y2="2.8" width="0.127" layer="39"/>
+<text x="0" y="2.54" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.508" layer="21"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="T2I" urn="urn:adsk.eagle:package:23194708/2" type="model">
@@ -2436,6 +2449,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
 <packageinstances>
 <packageinstance name="DISCRETECOMPONENTS_SW_2512"/>
+</packageinstances>
+</package3d>
+<package3d name="2917(7343-31-METRIC)" urn="urn:adsk.eagle:package:25131320/3" type="box">
+<packageinstances>
+<packageinstance name="2917(7343-31-METRIC)"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -2766,6 +2784,19 @@ unconnected if ID EEPROM not required.</text>
 <pin name="SDA" x="66.04" y="-5.08" rot="R180"/>
 <pin name="GND" x="66.04" y="-2.54" direction="pwr" rot="R180"/>
 <pin name="VDD" x="66.04" y="0" direction="pwr" rot="R180"/>
+</symbol>
+<symbol name="CPOL-US">
+<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.016" x2="0" y2="-1.0161" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1.0161" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1" x2="2.4892" y2="-1.8542" width="0.254" layer="94" curve="-37.878202" cap="flat"/>
+<wire x1="-2.4669" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.376341" cap="flat"/>
+<text x="1.016" y="0.635" size="1.778" layer="95">&gt;NAME</text>
+<text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-2.253" y1="0.668" x2="-1.364" y2="0.795" layer="94"/>
+<rectangle x1="-1.872" y1="0.287" x2="-1.745" y2="1.176" layer="94"/>
+<pin name="+" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
+<pin name="-" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3160,6 +3191,27 @@ unconnected if ID EEPROM not required.</text>
 </device>
 </devices>
 </deviceset>
+<deviceset name="C-TANTALUM(10UF_150UF)" prefix="C">
+<gates>
+<gate name="G$1" symbol="CPOL-US" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="2917(7343-31-METRIC)">
+<connects>
+<connect gate="G$1" pin="+" pad="+"/>
+<connect gate="G$1" pin="-" pad="-"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:25131320/3"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="VALUE" value="150uF" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="SparkFun-Jumpers" urn="urn:adsk.eagle:library:528">
@@ -3336,68 +3388,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package3dinstances>
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="CAP, Tantalum 150 uF - Kemet 2917 T491">
-<packages>
-<package name="2917(7343-31-METRIC)" urn="urn:adsk.eagle:footprint:25131319/2" locally_modified="yes">
-<smd name="+" x="-3.22" y="0" dx="2.77" dy="2.55" layer="1"/>
-<smd name="-" x="3.22" y="0" dx="2.77" dy="2.55" layer="1"/>
-<wire x1="-3.65" y1="2.15" x2="3.65" y2="2.15" width="0.127" layer="21"/>
-<wire x1="3.65" y1="-2.15" x2="-3.65" y2="-2.15" width="0.127" layer="21"/>
-<wire x1="-5.11" y1="2.8" x2="5.11" y2="2.8" width="0.127" layer="39"/>
-<wire x1="5.11" y1="2.8" x2="5.11" y2="-2.8" width="0.127" layer="39"/>
-<wire x1="5.11" y1="-2.8" x2="-5.11" y2="-2.8" width="0.127" layer="39"/>
-<wire x1="-5.11" y1="-2.8" x2="-5.11" y2="2.8" width="0.127" layer="39"/>
-<text x="0" y="2.54" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-2.54" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.508" layer="21"/>
-</package>
-</packages>
-<packages3d>
-<package3d name="2917(7343-31-METRIC)" urn="urn:adsk.eagle:package:25131320/3" type="box">
-<packageinstances>
-<packageinstance name="2917(7343-31-METRIC)"/>
-</packageinstances>
-</package3d>
-</packages3d>
-<symbols>
-<symbol name="CPOL-US">
-<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.016" x2="0" y2="-1.0161" width="0.1524" layer="94"/>
-<wire x1="0" y1="-1.0161" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="-1" x2="2.4892" y2="-1.8542" width="0.254" layer="94" curve="-37.878202" cap="flat"/>
-<wire x1="-2.4669" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.376341" cap="flat"/>
-<text x="1.016" y="0.635" size="1.778" layer="95">&gt;NAME</text>
-<text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-2.253" y1="0.668" x2="-1.364" y2="0.795" layer="94"/>
-<rectangle x1="-1.872" y1="0.287" x2="-1.745" y2="1.176" layer="94"/>
-<pin name="+" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
-<pin name="-" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="C-TANTALUM(10UF_150UF)" prefix="C">
-<gates>
-<gate name="G$1" symbol="CPOL-US" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="2917(7343-31-METRIC)">
-<connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:25131320/3"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="VALUE" value="150uF" constant="no"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -8483,7 +8473,6 @@ LED</description>
 <part name="R12" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:39650/1" value="10k"/>
 <part name="R13" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:39650/1" value="0"/>
 <part name="R14" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:39650/1" value="0"/>
-<part name="C8" library="CAP, Tantalum 150 uF - Kemet 2917 T491" deviceset="C-TANTALUM(10UF_150UF)" device="" package3d_urn="urn:adsk.eagle:package:25131320/3" value="150uF"/>
 <part name="GND21" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="J3" library="X15-Pi-Shield-Parts" deviceset="DF13-4P-1.25" device="DSA"/>
 <part name="J5" library="X15-Pi-Shield-Parts" deviceset="DF13-4P-1.25" device="DSA"/>
@@ -8542,6 +8531,15 @@ LED</description>
 <part name="R26" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:39650/1" value="10k"/>
 <part name="C13" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="0.1UF" device="-0603-25V-(+80/-20%)" package3d_urn="urn:adsk.eagle:package:37414/1" value="0.1uF"/>
 <part name="GND36" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND37" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND38" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND39" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND40" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND41" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND42" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND43" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND44" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="C14" library="X15-Pi-Shield-Parts" deviceset="C-TANTALUM(10UF_150UF)" device="" package3d_urn="urn:adsk.eagle:package:25131320/3" value="150uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -9161,10 +9159,6 @@ has a pull down resistor</text>
 <attribute name="NAME" x="231.14" y="87.884" size="1.778" layer="95" font="vector" align="bottom-center"/>
 <attribute name="VALUE" x="231.14" y="84.836" size="1.778" layer="96" font="vector" align="top-center"/>
 </instance>
-<instance part="C8" gate="G$1" x="241.3" y="81.28" smashed="yes">
-<attribute name="NAME" x="242.316" y="81.915" size="1.778" layer="95"/>
-<attribute name="VALUE" x="242.316" y="77.089" size="1.778" layer="96"/>
-</instance>
 <instance part="GND21" gate="1" x="241.3" y="71.12" smashed="yes">
 <attribute name="VALUE" x="241.3" y="70.866" size="1.778" layer="96" align="top-center"/>
 </instance>
@@ -9228,6 +9222,10 @@ has a pull down resistor</text>
 <instance part="GND29" gate="1" x="246.38" y="43.18" smashed="yes">
 <attribute name="VALUE" x="246.38" y="42.926" size="1.778" layer="96" align="top-center"/>
 </instance>
+<instance part="C14" gate="G$1" x="241.3" y="81.28" smashed="yes">
+<attribute name="NAME" x="242.316" y="81.915" size="1.778" layer="95"/>
+<attribute name="VALUE" x="242.316" y="77.089" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -9283,7 +9281,6 @@ has a pull down resistor</text>
 <segment>
 <pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="236.22" y1="86.36" x2="241.3" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="C8" gate="G$1" pin="+"/>
 <wire x1="241.3" y1="86.36" x2="241.3" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="236.22" y1="96.52" x2="241.3" y2="96.52" width="0.1524" layer="91"/>
@@ -9293,6 +9290,7 @@ has a pull down resistor</text>
 <wire x1="241.3" y1="88.9" x2="243.84" y2="88.9" width="0.1524" layer="91"/>
 <junction x="241.3" y="88.9"/>
 <label x="243.84" y="88.9" size="1.778" layer="95"/>
+<pinref part="C14" gate="G$1" pin="+"/>
 </segment>
 </net>
 <net name="SCL/3.6C" class="0">
@@ -9585,9 +9583,9 @@ has a pull down resistor</text>
 <wire x1="254" y1="162.56" x2="254" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C8" gate="G$1" pin="-"/>
 <wire x1="241.3" y1="76.2" x2="241.3" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="GND21" gate="1" pin="GND"/>
+<pinref part="C14" gate="G$1" pin="-"/>
 </segment>
 <segment>
 <pinref part="J3" gate="G$1" pin="4"/>
@@ -9972,6 +9970,24 @@ Current Sensor</text>
 <instance part="GND36" gate="1" x="157.48" y="124.46" smashed="yes">
 <attribute name="VALUE" x="157.48" y="124.206" size="1.778" layer="96" align="top-center"/>
 </instance>
+<instance part="GND39" gate="1" x="78.74" y="7.62" smashed="yes">
+<attribute name="VALUE" x="78.74" y="7.366" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND40" gate="1" x="144.78" y="10.16" smashed="yes">
+<attribute name="VALUE" x="144.78" y="9.906" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND41" gate="1" x="71.12" y="83.82" smashed="yes">
+<attribute name="VALUE" x="71.12" y="83.566" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND42" gate="1" x="137.16" y="96.52" smashed="yes">
+<attribute name="VALUE" x="137.16" y="96.266" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND43" gate="1" x="17.78" y="5.08" smashed="yes">
+<attribute name="VALUE" x="17.78" y="4.826" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND44" gate="1" x="33.02" y="5.08" smashed="yes">
+<attribute name="VALUE" x="33.02" y="4.826" size="1.778" layer="96" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -9994,12 +10010,12 @@ Current Sensor</text>
 <segment>
 <pinref part="D4" gate="G$1" pin="C"/>
 <wire x1="33.02" y1="10.16" x2="33.02" y2="7.62" width="0.1524" layer="91"/>
-<label x="33.02" y="7.62" size="1.778" layer="95"/>
+<pinref part="GND44" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="D3" gate="G$1" pin="C"/>
 <wire x1="17.78" y1="10.16" x2="17.78" y2="7.62" width="0.1524" layer="91"/>
-<label x="17.78" y="7.62" size="1.778" layer="95"/>
+<pinref part="GND43" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="J13" gate="G$1" pin="1"/>
@@ -10025,28 +10041,21 @@ Current Sensor</text>
 <pinref part="GND33" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="Q3" gate="NMOS" pin="S"/>
-<wire x1="78.74" y1="17.78" x2="78.74" y2="10.16" width="0.1524" layer="91"/>
-<label x="78.74" y="7.62" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$7" gate="G$1" pin="P$2"/>
-<wire x1="144.78" y1="20.32" x2="144.78" y2="12.7" width="0.1524" layer="91"/>
-<label x="144.78" y="10.16" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="C10" gate="G$1" pin="2"/>
 <wire x1="63.5" y1="99.06" x2="63.5" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="91.44" x2="81.28" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="91.44" x2="81.28" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="91.44" x2="81.28" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="U$8" gate="G$1" pin="GND"/>
 <wire x1="81.28" y1="109.22" x2="82.55" y2="109.22" width="0.1524" layer="91"/>
-<label x="81.28" y="99.06" size="1.778" layer="95"/>
+<pinref part="GND41" gate="1" pin="GND"/>
+<wire x1="71.12" y1="91.44" x2="71.12" y2="86.36" width="0.1524" layer="91"/>
+<junction x="71.12" y="91.44"/>
 </segment>
 <segment>
 <pinref part="C11" gate="G$1" pin="2"/>
 <wire x1="137.16" y1="104.14" x2="137.16" y2="99.06" width="0.1524" layer="91"/>
-<label x="137.16" y="99.06" size="1.778" layer="95"/>
+<pinref part="GND42" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C12" gate="G$1" pin="2"/>
@@ -10062,6 +10071,16 @@ Current Sensor</text>
 <pinref part="C13" gate="G$1" pin="2"/>
 <wire x1="157.48" y1="129.54" x2="157.48" y2="127" width="0.1524" layer="91"/>
 <pinref part="GND36" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="Q3" gate="NMOS" pin="S"/>
+<pinref part="GND39" gate="1" pin="GND"/>
+<wire x1="78.74" y1="17.78" x2="78.74" y2="10.16" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$7" gate="G$1" pin="P$2"/>
+<pinref part="GND40" gate="1" pin="GND"/>
+<wire x1="144.78" y1="20.32" x2="144.78" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -10376,6 +10395,12 @@ decoupling cap for solenoids</text>
 <attribute name="VALUE" x="89.916" y="69.469" size="1.778" layer="96" font="vector"/>
 </instance>
 <instance part="U1" gate="G$1" x="76.2" y="134.62" smashed="yes"/>
+<instance part="GND37" gate="1" x="76.2" y="104.14" smashed="yes">
+<attribute name="VALUE" x="76.2" y="103.886" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND38" gate="1" x="88.9" y="60.96" smashed="yes">
+<attribute name="VALUE" x="88.9" y="60.706" size="1.778" layer="96" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10438,14 +10463,14 @@ decoupling cap for solenoids</text>
 <label x="185.42" y="140.97" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="C9" gate="G$1" pin="-"/>
-<wire x1="88.9" y1="68.58" x2="88.9" y2="63.5" width="0.1524" layer="91"/>
-<label x="83.82" y="63.5" size="1.778" layer="95"/>
+<pinref part="U1" gate="G$1" pin="GND"/>
+<wire x1="76.2" y1="111.76" x2="76.2" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="GND37" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="GND"/>
-<wire x1="76.2" y1="111.76" x2="76.2" y2="99.06" width="0.1524" layer="91"/>
-<label x="76.2" y="101.6" size="1.778" layer="95" rot="R90"/>
+<pinref part="C9" gate="G$1" pin="-"/>
+<wire x1="88.9" y1="68.58" x2="88.9" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="GND38" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="SOL3_1" class="0">
